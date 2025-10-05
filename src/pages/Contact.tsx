@@ -8,7 +8,7 @@ export function ContactPage() {
 
   return (
     <motion.div
-      className={`p-10 max-w-xl mx-auto ${
+      className={`p-8 max-w-xl mx-auto ${
         isDark ? "text-white" : "text-gray-900"
       }`}
       initial={{ opacity: 0 }}
