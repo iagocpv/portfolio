@@ -18,7 +18,7 @@ export function App() {
       <ScrollToTop />
       <div className={"min-h-screen " + (isDark ? "dark bg-gray-950 text-gray-100" : "bg-gradient-to-b from-gray-100 to-gray-200 text-gray-900")}>
         <Navigation/>
-        <Routes>
+        <Routes >
           <Route path="/" element={<HomePage />} />
           <Route path="/projetos" element={<ProjectsPage />} />
           <Route path="/sobre" element={<AboutPage />} />

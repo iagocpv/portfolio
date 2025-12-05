@@ -69,7 +69,7 @@ export function AboutPage() {
           Cursando 6º semestre do curso Tecnólogo em Desenvolvimento de Software Multiplataforma na Fatec de São José dos Campos.
         </p>
         <p className={`text-lg ${isDark ? "text-white" : "text-gray-900"}`}>
-          Previsão de conclusão: 12/2025
+          Previsão de conclusão: 06/2026
         </p>
       </div>
 

@@ -1,9 +1,4 @@
 @import "tailwindcss";
-@import "tailwindcss/preflight"
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 html, body, #root {
   height: 100%;
@@ -13,4 +8,15 @@ html, body, #root {
 
 body {
   @apply bg-white text-black dark:bg-gray-950 dark:text-white;
+}
+
+@theme {
+  /* Reset all default breakpoints */
+  --breakpoint-*: initial; 
+
+  /* Define your custom breakpoints */
+  --breakpoint-sm: 420px;
+  --breakpoint-md: 640px;
+  --breakpoint-lg: 720px;
+  --breakpoint-xl: 1200px; /* Example of a new custom breakpoint */
 }

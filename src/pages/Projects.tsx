@@ -11,6 +11,13 @@ export function ProjectsPage() {
 
   const apiProjects: Project[] = [
     {
+      title: "API 6 - Synapse",
+      description: "Plataforma inteligente desenvolvida para a empresa DomRock, utilizando uma base de dados fornecida em arquivos CSV como referência para estruturar os relatórios e o módulo de chat. O sistema automatiza a geração de relatórios corporativos, oferece consultas em linguagem natural e disponibiliza previsões e análises em tempo real, tornando a exploração de dados mais rápida e acessível.",
+      url: "https://github.com/Grupo-Syntax-Squad/synapse",
+      contribution: "Cadastro de usuários, autenticação/autorização, criação dos módulos de websocket e notificações, envio de relatórios por email, previsões + cache do Prophet.",
+      tech: "Python, FastAPI, React, PostgreSQL, SpaCy, Transformers, Torch, Docker, Redis, Prometheus, Grafana, Loki"
+    },
+    {
       title: "API 5 - Neurahive",
       description: "Plataforma desenvolvida para a empresa Pro4Tech com foco em gerenciar agentes de inteligência artificial. O sistema permite cadastrar e configurar agentes que respondem a perguntas dos usuários a partir de dados estruturados em arquivos CSV, facilitando a consulta e análise de informações de forma automatizada.",
       url: "https://github.com/Grupo-Syntax-Squad/neurahive",
@@ -49,38 +56,50 @@ export function ProjectsPage() {
   
   const otherProjects: Project[] = [ 
     {
+      title: "Tokenização SpaCy",
+      description: "Este projeto implementa uma pipeline de tokenização utilizando SpaCy e filtrando tokens que não são palavras usando expressões regulares. É baixado um texto do Projeto Gutenberg(como Dom Casmurro), processado para extrair apenas as palavras relevantes e depois são exibidas estatísticas sobre o número de tokens antes e depois da filtragem.",
+      url: "https://github.com/iagocpv/tokenizacao-spacy",
+      tech: "Python, SpaCy"
+    }, 
+    {
+      title: "Parceiros",
+      description: "Formulário simples para cadastro de parceiros comerciais, com busca no ViaCep para preenchimento automático do endereço e ReceitaWS para validação e autopreenchimento dos dados do CNPJ. Os dados são salvos utilizando procedures no banco Postgres.",
+      url: "https://github.com/iagocpv/parceiros",
+      tech: "React, Typescript, Spring Boot, Java, Postgres"
+    }, 
+    {
       title: "Youtube Downloader",
-      description: "Aplicativo para baixar vídeos do YouTube em diferentes resoluções e formatos, incluindo MP4 e MP3.",
+      description: "Aplicativo desktop desenvolvido em Python para baixar vídeos e áudios do YouTube em diferentes resoluções e formatos, incluindo MP4 e MP3. O sistema permite ao usuário escolher a qualidade do download, visualizar o progresso em tempo real e salvar os arquivos de forma organizada em diretórios locais, oferecendo uma interface simples e intuitiva construída com Tkinter.",
       url: "https://github.com/iagocpv/yt-downloader",
       tech: "Python, Tkinter, yt-dlp"
     },   
     {
       title: "Foodtracker",
-      description: "App para monitorar alimentação de pets, alertando quando o pote de ração estiver vazio.",
+      description: "Aplicativo voltado ao monitoramento de alimentação de pets, que utiliza sensores e integração com backend para alertar o usuário quando o pote de ração estiver vazio. O sistema registra horários de alimentação, consumo médio e status do recipiente, possibilitando acompanhar hábitos do animal e receber notificações automáticas via API. O design foi planejado no Figma e o backend implementado em FastAPI.",
       url: "https://github.com/Grupo-Syntax-Squad/food-tracker",
-      tech: "Python, FastAPI, Postgres, Figma, Docker"
+      tech: "Python, FastAPI, Postgres, Docker"
     },
     {
       title: "App multifunções",
-      description: "Aplicativo Flutter com funções como To-Do List, Lista de compras, Notas rápidas, pesquisa de cidades, entre outras.",
+      description: "Aplicativo móvel criado em Flutter que concentra diversas ferramentas do dia a dia em uma única interface, como To-Do List, lista de compras, notas rápidas, calculadora e pesquisa de cidades. O projeto tem como objetivo oferecer praticidade e organização pessoal, com armazenamento local e design responsivo. Cada funcionalidade foi projetada para funcionar de forma independente dentro do mesmo app.",
       url: "https://github.com/iagocpv/flutter_multifuncoes",
       tech: "Dart, Flutter"
     },
     {
       title: "Atlantis",
-      description: "Sistema para gerenciamento de acomodações de clientes e dependentes para uma rede de resorts fictícia.",
+      description: "Sistema web desenvolvido para o gerenciamento de acomodações e reservas em uma rede de resorts fictícia. A aplicação permite cadastrar clientes, dependentes e quartos, além de gerenciar check-ins, check-outs e status das hospedagens. O projeto foca em boas práticas de componentização com React e na criação de uma interface moderna e responsiva voltada à administração hoteleira.",
       url: "https://github.com/iagocpv/atlantis",
       tech: "React, Typescript"
     },
     {
       title: "Autobots",
-      description: "Sistema para gerenciamento de vendas de veículos.",
+      description: "Aplicação desenvolvida em Java com Spring para o gerenciamento de vendas de veículos. O sistema inclui cadastro de clientes, carros e vendedores, além do registro de negociações e relatórios básicos. Foi implementado com o banco de dados H2 para facilitar o desenvolvimento local e demonstrar o uso de entidades, relacionamentos e operações CRUD em ambiente Spring Boot.",
       url: "https://github.com/iagocpv/autobots",
       tech: "Java, Spring, H2"
     },
     {
       title: "Loteria",
-      description: "Aplicativo web para mostrar os dados do último sorteio da Mega-sena, Lotofácil e Quina.",
+      description: "Aplicativo web que consome APIs públicas para exibir os resultados mais recentes das principais loterias brasileiras, como Mega-Sena, Lotofácil e Quina. O sistema apresenta informações como números sorteados, data do concurso e premiações, além de oferecer uma interface simples e responsiva para facilitar a consulta rápida pelos usuários.",
       url: "https://github.com/iagocpv/LabDevWeb",
       tech: "React, Typescript"
     }

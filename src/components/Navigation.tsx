@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Home, FileText, Mail, Sun, Moon, Menu, X } from "lucide-react";
+import { Home, FileText, Mail, Sun, Moon, Menu, X, User } from "lucide-react";
 import { Button } from "./ui/Button";
 import { useTheme } from "../context/ThemeContext";
 
@@ -9,49 +9,58 @@ export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow p-6 sticky top-0 z-50">
-      <div className="flex justify-between items-center m-auto w-max">
-        <div className="hidden md:flex gap-6 text-lg">
+    <nav className="bg-gray-900 shadow p-5 sticky top-0 z-50 text-white">
+      <div className="flex items-center m-auto w-max">
+        <div className="hidden sm:flex gap-1 md:gap-6 text-lg">
           <Link to="/">
-            <Button variant="ghost" className="text-white">
-              <Home className="mr-2" /> Início
+            <Button variant="ghost">
+              <Home/>
             </Button>
           </Link>
           <Link to="/projetos">
-            <Button variant="ghost" className="text-white">
-              <FileText className="mr-2" /> Projetos
+            <Button variant="ghost">
+              <FileText className="mr-2 hidden md:flex" />Projetos
             </Button>
           </Link>
           <Link to="/sobre">
-            <Button variant="ghost" className="text-white">
-              <FileText className="mr-2" /> Sobre
+            <Button variant="ghost">
+              <User className="mr-2 hidden md:flex"/>Sobre
             </Button>
           </Link>
           <Link to="/contato">
-            <Button variant="ghost" className="text-white">
-              <Mail className="mr-2" /> Contato
+            <Button variant="ghost">
+              <Mail className="mr-2 hidden md:flex" />Contato
             </Button>
           </Link>
-          <Button onClick={toggleTheme} variant="ghost" className="text-white">
-            {isDark ? <Moon className="mr-2" /> : <Sun className="mr-2" />} Tema
+          <Button onClick={toggleTheme} variant="ghost">
+            {isDark ? <Moon/> : <Sun/>}
           </Button>
         </div>
+        
+        <div  className="flex gap-15 sm:hidden text-lg items-center">
+          {!isOpen && 
+            <Link to="/">
+              <Button variant="ghost">
+                <Home/>
+              </Button>
+            </Link>
+          }
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="sm:hidden text-white focus:outline-none"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+          {!isOpen && 
+            <Button onClick={toggleTheme} variant="ghost">
+              {isDark ? <Moon/> : <Sun/>}
+            </Button>}
+        </div>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white focus:outline-none"
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
       </div>
 
       {isOpen && (
-        <div className="flex flex-col gap-4 mt-4 md:hidden">
-          <Link to="/" onClick={() => setIsOpen(false)}>
-            <Button variant="ghost" className="w-full text-white">
-              <Home className="mr-2" /> Início
-            </Button>
-          </Link>
+        <div className="flex flex-col gap-4 mt-4 sm:hidden">
           <Link to="/projetos" onClick={() => setIsOpen(false)}>
             <Button variant="ghost" className="w-full text-white">
               <FileText className="mr-2" /> Projetos
@@ -67,16 +76,6 @@ export default function Navigation() {
               <Mail className="mr-2" /> Contato
             </Button>
           </Link>
-          <Button
-            onClick={() => {
-              toggleTheme();
-              setIsOpen(false);
-            }}
-            variant="ghost"
-            className="w-full text-white"
-          >
-            {isDark ? <Moon className="mr-2" /> : <Sun className="mr-2" />} Tema
-          </Button>
         </div>
       )}
     </nav>
