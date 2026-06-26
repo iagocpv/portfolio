@@ -19,7 +19,7 @@ export function HomePage() {
         <img
           src={avatarImg}
           alt="Avatar Iago Cardoso Souza"
-          className="mx-auto mb-8 w-48 h-48 rounded-full object-cover border-4 border-indigo-500"
+          className="mx-auto mb-12 mt-8 w-72 h-72 shadow-lg rounded-full object-cover"
         />
 
         <h1 className={`text-5xl font-bold mb-4 ${
